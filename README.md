@@ -1,28 +1,92 @@
-1. App Title: Track Mac.
-2. App Description: The application will This app will generate meal plan according to selected options the user makes.
-3. API: Spoonacular.com.
-4. API Snippet: https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93de89eaa9&targetCaleries=3000
+				# Project Overview
 
-5. wire Frames: file:///home/herman/Project%201.%20Diagram%20()-Main%20page%20.jpg,
+## Project Name
 
-	file:///home/herman/Project%201.%20Diagram%20()-Mobile%20page.jpg
+Track Mac.
 
-6. MVP: use HTML CSS and JavaScript to make a responsive web site and using Axios to make API calls. This app will 
-generate meal plan according to selected options the user makes. user can also see other food categories, their recipes, calorie count and macro counts. 
+## Project Description
 
-7. Post-mvp: send user to recipes along with other meal.
+ This project is an app that will generate meal plan according to selected options the user makes. This project was inspired by other diet and meal plan apps.
 
-8 .Goals: 	Day 1: complete HTML, CSS layout, Axios call to API and create event listener functions. 		
-		Day 2: Add API content to page and create meal plan generator box, provide link links to recipes as well 			as drop down menu and style content. 
-		Day 3: complete CSS styling, make page responsive, test all buttons and functions.
-		Day 4: go over missing details and deploy application.
-		
-9. Priority Matrix: file:///home/herman/Project%201.%20Diagram%20()-create%20meal%20plan.jpg
+## API and Data Sample
+The API i am using is called Spoonacular.com.
 
-10. Time Frames:  HTML & CSS Layout grid  - 3hrs
+
+## Wireframes
+https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93de89eaa9&targetCaleries=3000
+
+{
+          "id": 32952,
+          "imageType": "jpg",
+          "title": "Pesto Pasta with Green Beans and Potatoes",
+          "readyInMinutes": 15,
+          "servings": 4,
+          "sourceUrl": "http://www.myrecipes.com/recipe/pesto-pasta-with-green-beans-potatoes-10000001150886/"
+        },
+        {
+          "id": 185259,
+          "imageType": "jpg",
+          "title": "Chicken and Biscuits",
+          "readyInMinutes": 45,
+          "servings": 8,
+          "sourceUrl": "http://www.epicurious.com/recipes/food/views/Chicken-and-Biscuits-51149130"
+        }
+
+### MVP/PostMVP
+	 
+
+#### MVP 
+render food images
+user can select food categories to look at.
+user can create meal plan  from meal plan generator button.
+select calorie count
+select diet option
+select serving size
+meal generator will display food images with nutrition fact along with link toview meal recipes
+
+#### PostMVP  
+-send meal plan to users email.
+
+## Priority Matrix
+
+![Project 1  Diagram ()-create meal plan](https://user-images.githubusercontent.com/89764557/131390105-0eb0fe6b-8653-42b3-9cd6-c2a99fbf4b9e.jpg)
+
+HTML & CSS Layout grid  - 3hrs
 		Axios call to APIs and display content -3hrs
 		meal plan generate, calorie and macro tracker - 3hrs
 		create event listeners and drop now menu  -  3hrs
 		fix content inside respective sections - 3hrs
 		make page responsive on all device - 3hrs
 		add link to recipes - 3hrs
+
+
+
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Adding Form | H | 3hrs|  | |
+| Working with API | H | 3hrs| | |
+| working with Event Listeners and funcitons | H | 3hrs | |
+| Style content | H | 3hrs| | |
+| Build responsive Layout | H | 3hrs | |
+| Total | H | |  | |
+
+## Timeframes
+
+![Project 1  Diagram ()-Mobile page](https://user-images.githubusercontent.com/89764557/131390056-36ea04b8-d33a-4c69-83e1-186d3a4332f4.jpg)
+
+![Project 1  Diagram ()-Main page ](https://user-images.githubusercontent.com/89764557/131390074-2595b25e-051a-4515-a3b8-028988747d9a.jpg)
+
+## Code Snippet
+
+Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```
+
+## Change Log
+ Use this section to document what changes were made and the reasoning behind those changes.  
+		
+		
