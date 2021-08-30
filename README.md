@@ -51,7 +51,8 @@ https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93
 
 ## Priority Matrix
 
-![Project 1  Diagram ()-create meal plan](https://user-images.githubusercontent.com/89764557/131390105-0eb0fe6b-8653-42b3-9cd6-c2a99fbf4b9e.jpg)
+![Project 1  Diagram ()-create meal plan](https://user-images.githubusercontent.com/89764557/131404962-f0f3de6c-82c8-4aaf-804b-d500e5374de9.jpg)
+
 
 HTML & CSS Layout grid  - 3hrs
 		Axios call to APIs and display content -3hrs
@@ -73,10 +74,8 @@ HTML & CSS Layout grid  - 3hrs
 | Total | H | |  | |
 
 ## Timeframes
-
-![Project 1  Diagram ()-Mobile page](https://user-images.githubusercontent.com/89764557/131390056-36ea04b8-d33a-4c69-83e1-186d3a4332f4.jpg)
-
-![Project 1  Diagram ()-Main page ](https://user-images.githubusercontent.com/89764557/131390074-2595b25e-051a-4515-a3b8-028988747d9a.jpg)
+![Project 1  Diagram ()-Mobile page](https://user-images.githubusercontent.com/89764557/131405080-11a715a2-d1a1-45c8-b12e-df825c2becc0.jpg)
+![Project 1  Diagram ()-Main page ](https://user-images.githubusercontent.com/89764557/131405043-e1142789-20fd-42b3-b10c-f3e74a315c50.jpg)
 
 ## Code Snippet
 
