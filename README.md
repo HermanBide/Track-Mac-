@@ -38,16 +38,16 @@ https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93
 	 
 
 #### MVP 
-render food images
-user can select food categories to look at.
-user can create meal plan  from meal plan generator button.
-select calorie count
-select diet option
-select serving size
-meal generator will display food images with nutrition fact along with link toview meal recipes
+* render food images
+* user can select food categories to look at.
+* user can create meal plan  from meal plan generator button.
+* select calorie count
+* select diet option
+* select serving size
+* meal generator will display food images with nutrition fact along with link toview meal recipes
 
 #### PostMVP  
--send meal plan to users email.
+* send meal plan to users email.
 
 ## Priority Matrix
 
