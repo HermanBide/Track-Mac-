@@ -4,7 +4,8 @@
 4. API Snippet: https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93de89eaa9&targetCaleries=3000
 
 5. wire Frames: file:///home/herman/Project%201.%20Diagram%20()-Main%20page%20.jpg,
-file:///home/herman/Project%201.%20Diagram%20()-Mobile%20page.jpg
+
+		file:///home/herman/Project%201.%20Diagram%20()-Mobile%20page.jpg
 
 6. MVP: use HTML CSS and JavaScript to make a responsive web site and using Axios to make API calls. This app will 
 generate meal plan according to selected options the user makes. user can also see other food categories, their recipes, calorie count and macro counts. 
