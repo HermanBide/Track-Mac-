@@ -76,6 +76,8 @@ HTML & CSS Layout grid  - 3hrs
 ## Timeframes
 
 ![Project 1  Diagram ()-Main page ](https://user-images.githubusercontent.com/89764557/131405043-e1142789-20fd-42b3-b10c-f3e74a315c50.jpg)
+
+
 ![Project 1  Diagram ()-Mobile page](https://user-images.githubusercontent.com/89764557/131405586-9264989f-2d7a-4a7d-8a57-f61ea15a9b32.jpg)
 
 ## Code Snippet
