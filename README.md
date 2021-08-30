@@ -15,6 +15,7 @@ The API i am using is called Spoonacular.com.
 ## Wireframes
 https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93de89eaa9&targetCaleries=3000
 
+```json
 {
           "id": 32952,
           "imageType": "jpg",
@@ -31,6 +32,7 @@ https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93
           "servings": 8,
           "sourceUrl": "http://www.epicurious.com/recipes/food/views/Chicken-and-Biscuits-51149130"
         }
+```
 
 ### MVP/PostMVP
 	 
