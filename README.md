@@ -21,8 +21,7 @@ https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93
           "imageType": "jpg",
           "title": "Pesto Pasta with Green Beans and Potatoes",
           "readyInMinutes": 15,
-          "servings": 4,![Project 1  Diagram ()-Mobile page](https://user-images.githubusercontent.com/89764557/131405558-2429d3e9-107a-4d6c-85b2-806638c4de78.jpg)
-
+          "servings": 4,
           "sourceUrl": "http://www.myrecipes.com/recipe/pesto-pasta-with-green-beans-potatoes-10000001150886/"
         },
         {
