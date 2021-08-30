@@ -4,7 +4,7 @@
 4. API Snippet: https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93de89eaa9&targetCaleries=3000
 
 5. wire Frames:
-6. 	 file:///home/herman/Project%201.%20Diagram%20()-Main%20page%20.jpg,
+6. 	file:///home/herman/Project%201.%20Diagram%20()-Main%20page%20.jpg
 
 	file:///home/herman/Project%201.%20Diagram%20()-Mobile%20page.jpg
 
