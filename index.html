@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="index.js"></script>
+    <title>Track Mac App.</title>
+</head>
+<body>
+   
+    <nav class="navbar">
+        <div class="logo">Track Mac</div>
+
+        <div class="search-bar">
+            <input id="food-search" type="text">
+            <button class="search" type="submit">search</button>
+        </div>
+
+        <div class="dropdown">categories
+            <!-- <ul>
+                <li></li>
+            </ul> -->
+        </div>
+    </nav>
+
+    <header class="header">
+        <main id="main">
+
+            pic slide
+        </main>
+        <div class="inner-grid">
+
+        </div>
+    </header>
+
+    <section class="meal-plan"> meal plan
+        <div class="inner-grid">
+            <form class="form">
+                <div class="calorie">
+                    <h3>Generate your Meal Plan</p>
+                    <input id="input" type="text" placeholder="Type Desire Calorie"><br/>
+                </div>
+
+                <div class="custom-select">
+                    <h4>Select a Diet</h4>
+                    <div class='options'>
+                            <input type='radio'id="">Classic</input>
+                            <input type='radio'id="">Vegan</input>
+                            <input type='radio'id="">Vegetarian</input>
+                            <input type='radio'id="">Pescatarian</input>
+                            <span id="arrow"></span>
+                    </div>
+                </div><br/>
+
+                <div class="custom-select">
+                    <h4>Select a serving size</h4>
+                    <div id='options'>
+                        <input type='radio'id="">2 servings</input>
+                        <input type='radio'id="">3 servings</input>
+                        <input type='radio'id="">4 servings</input>
+                        <input type='radio'id="">more servings</input>
+                        <span class="arrow"></span>
+                    </div>
+                </div><br/>
+                <div class='allergens'>
+                    <h4>Any Allergies</h4><br/>
+                        <div id='allergy'>peanuts</div>
+                        <div id='allergy'>shellfish</div>
+                        <div id='allergy'>Dairy</div>
+                        <div id='allergy'>Eggs</div>
+                        <div id='allergy'>Sesame</div>
+                        <div id='allergy'>Mustard</div>
+                        <div id='allergy'>Gluten</div>
+                </div>
+
+            <button id='get-meal'>Submit</button>
+        </form>
+
+        <form class='Meal-plan-container'>
+            <div id='meal-plan-info' class='row-meal'>
+                <img>
+                <p></p>
+            </div>
+        </form>
+
+        </div>
+    </section>
+
+    <section class="food-cards"> pic -section
+        <div class="inner-grid" id="cards">
+            <!-- <img src="" alt="Image">
+            <div class="content"></div> -->
+        </div>
+
+        <div class="inner-grid" id="cards"></div>
+        <div class="inner-grid" id="cards"></div>
+        <div class="inner-grid" id="cards"></div>
+     
+    
+    </section>
+</body>
+</html>
