@@ -15,8 +15,8 @@
         <div class="logo">Track Mac</div>
 
         <div class="search-bar">
-            <input id="food-search" type="text">
-            <button class="search" type="submit">search</button>
+            <input id="food-search" type="text" autocomplete="off">
+            <input id="search" type="submit" value="search"/>
         </div>
 
         <div class="dropdown">categories
@@ -41,42 +41,44 @@
             <form class="form">
                 <div class="calorie">
                     <h3>Generate your Meal Plan</p>
-                    <input id="input" type="text" placeholder="Type Desire Calorie"><br/>
+                    <input id="input" type="text" placeholder="Type Desire Calorie" value=""><br/>
                 </div>
 
                 <div class="custom-select">
                     <h4>Select a Diet</h4>
-                    <div class='options'>
-                            <input type='radio'id="">Classic</input>
-                            <input type='radio'id="">Vegan</input>
-                            <input type='radio'id="">Vegetarian</input>
-                            <input type='radio'id="">Pescatarian</input>
+                    <select class='diet'>
+                            <option type='radio' value="classic">Classic</option>
+                            <option type='radio' value="vegan">Vegan</option>
+                            <option type='radio' value="vegetarian">Vegetarian</option>
+                            <option type='radio' value="pescatarian">Pescatarian</option>
                             <span id="arrow"></span>
-                    </div>
+                    </select>
                 </div><br/>
 
                 <div class="custom-select">
                     <h4>Select a serving size</h4>
-                    <div id='options'>
-                        <input type='radio'id="">2 servings</input>
-                        <input type='radio'id="">3 servings</input>
-                        <input type='radio'id="">4 servings</input>
-                        <input type='radio'id="">more servings</input>
+                    <select id='serving-size'>
+                        <option type='radio' value="two-servings">2 servings</option>
+                        <option type='radio' value="three-servings">3 servings</option>
+                        <option type='radio' value="four-servings">4 servings</option>
+                        <option type='radio' value="more-servings">more servings</option>
                         <span class="arrow"></span>
-                    </div>
+                        </select>
                 </div><br/>
-                <div class='allergens'>
-                    <h4>Any Allergies</h4><br/>
-                        <div id='allergy'>peanuts</div>
-                        <div id='allergy'>shellfish</div>
-                        <div id='allergy'>Dairy</div>
-                        <div id='allergy'>Eggs</div>
-                        <div id='allergy'>Sesame</div>
-                        <div id='allergy'>Mustard</div>
-                        <div id='allergy'>Gluten</div>
-                </div>
+                <div class='custom-select'>
+                    <h4>Any Allergies</h4>
+                    <select id="allergens">
+                        <option id='allergy' value="peanuts">peanuts</option>
+                        <option id='allergy' value="shellfish">shellfish</option>
+                        <option id='allergy' value="dairy">Dairy</option>
+                        <option id='allergy' value="eggs">Eggs</option>
+                        <option id='allergy' value="sesame">Sesame</option>
+                        <option id='allergy' value="mustard">Mustard</option>
+                        <option id='allergy' value="gluten">Gluten</option>
+                    </select>
+                </div><br/>
 
-            <button id='get-meal'>Submit</button>
+            <button id='get-meal'>Get Meal</button>
         </form>
 
         <form class='Meal-plan-container'>
@@ -87,17 +89,21 @@
         </form>
 
         </div>
+
+
+
+
     </section>
 
     <section class="food-cards"> pic -section
-        <div class="inner-grid" id="cards">
+        <!-- <div class="inner-grid" id="cards"> -->
             <!-- <img src="" alt="Image">
             <div class="content"></div> -->
-        </div>
-
+        <!-- </div> -->
+<!-- 
         <div class="inner-grid" id="cards"></div>
         <div class="inner-grid" id="cards"></div>
-        <div class="inner-grid" id="cards"></div>
+        <div class="inner-grid" id="cards"></div> -->
      
     
     </section>
