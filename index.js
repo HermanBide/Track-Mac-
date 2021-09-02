@@ -22,7 +22,7 @@ const recipeData = async (food) => {
 
         results.forEach((result) => {
             // foodCard.innerText = result.title;
-            console.log(result);
+            // console.log(result);
 
             const divEl = document.createElement('div');
 
@@ -96,18 +96,56 @@ recipeData("chicken");
 //     }
 // }
 
+let calories = "";
+let diet = "";
+let serving = "";
+let allergens = "";
 
-const mealData = async (calories) => {
+const handleSelect = () => {
+    calories = document.querySelector('#input').value;
+    diet = document.querySelector('.diet').value;
+    serving = document.querySelector('#serving-size').value;
+    allergens = document.querySelector('#allergens').value;
+}
+
+const fetchMealData = async (calories, diet, allergens) => {
     try {
-        const response = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=d99bae42f1e440d599f4957c65df8ea5&targetCaleries=${calories}`) 
+        const response = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=d99bae42f1e440d599f4957c65df8ea5&targetCaleries=${calories}&diet=${diet}&exclude=${allergens}`) 
         const dayObject = response.data.week;
         console.log(dayObject);
         const days = Object.values(dayObject);
-        console.log(days);
+        // console.log(days);
 
         days.forEach((day) => {
+            // return (day.meals[].title, day.nutrients[])
+            // day.meals[o].filter((meals) => {
+            //     for (let i=0; i<meals.length; i++) {
+            //         if(meals[0].serving !== "O serving") {
+            //             return (`${calories}`)
+            //         }
+            //     }
+            // });
 
             console.log(day.meals[2].title, day.nutrients.protein)
+
+            const formEl = document.querySelector('.meal-plan-container');
+            const foodContainer = document.createElement('div')
+
+            const mealImg = document.createElement('img')
+            mealImg.src = day.meals[1].sourceUrl.image
+
+            const mealTitleEl = document.createElement('h3');
+            mealTitleEl.innerText = day.meals[1].title;
+
+            const nutrientEl = document.createElement('p')
+            nutrientEl.innerText = day.nutrients
+
+            foodContainer.appendChild(mealImg, mealTitleEl, nutrientEl)
+            formEl.append(foodContainer);
+
+
+
+
             // const foodNutrient = document.createElement("div");
             // foodNutrient.innerHTML = `<div class="row">
             //                             <div class="column four">
@@ -125,7 +163,7 @@ const mealData = async (calories) => {
         console.error(error);
     }
 }
-mealData();
+fetchMealData(meals[1]);
 
 // const displayFood = (data) => {
 //     let mealInfo = `
@@ -138,58 +176,16 @@ mealData();
 
 const mealForm = document.getElementsByClassName('.form');
 const InputEl= document.querySelector('#input').value;
-const Diet = document.querySelector('#diet').value;
-const serving = document.querySelector('#serving-size').value;
-const Allergens = document.querySelector('#allergy').value;
-
-const handleSelect = (e) => {
-    let select = e.target;
-    console.log(select.value);
-    let choices=[];
-    for(let i=0; i<select.length; i++) {
-        choices.push(select[i].value);
-    }
-    // choices = [].map.call(select, (option) => option.value)
-    console.log(choices)
-
-
-    //  let title = title;
-    //  let url = sourceURL;
-    // let servings = servings;
-
-
-    // let nutrients = {
-    // let calories = calories;
-    // let carbohydrates = carbohydrates;
-    // let fat = fat;
-    // let protein = protein;
-    // }
-
-//     let submit = genMealPlan();
-//     if(vegan === ) {
-
-//     } else if (vegetarian) {
-
-//     }else if ( pescatarian) {
-
-//     }else {
-//         console.log(classic);
-//     }
-
-//     const fetchFood = fetchFood();
-}
-handleSelect();
 
 const generateMeal = () => {
-    mealData()
-    handleSelect()
-    
+    handleSelect();
+    fetchMealData();
 }
 
-// const getMeal = document.getElementById('#get-meal');
+const getMeal = document.querySelector('sumit');
 // const getMealInfo = document.getElementById('#meal-plan-info');
 
-document.getElementById('#diet').document.addEventListener('click', handleSelect);
+getMeal.document.addEventListener('click', generateMeal());
 
 
 
