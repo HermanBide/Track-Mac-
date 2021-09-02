@@ -6,38 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,600&display=swap" rel="stylesheet"> 
+
     <script defer src="index.js"></script>
     <title>Track Mac App.</title>
 </head>
 <body>
-   
+<!--Navbar-->
     <nav class="navbar">
-        <div class="logo">Track Mac</div>
-
-        <div class="search-bar">
-            <input id="food-search" type="text" autocomplete="off">
-            <input id="search" type="submit" value="search"/>
+        <div class="logo">
+            <h2>Track-Mac!</h2>
         </div>
-
-        <div class="dropdown">categories
-            <!-- <ul>
-                <li></li>
-            </ul> -->
+        <span style="color: orangered">
+            <i id="icon" class="fas fa-utensils fa-3x"></i>
+        </span>
+        <div class="search-bar">
+            <input id="food-search" type="text" autocomplete="off" >
+            <button id="search" type="click">search</button>
         </div>
     </nav>
 
+<!--Header-->
     <header class="header">
-        <main id="main">
-
-            pic slide
-        </main>
-        <div class="inner-grid">
-
-        </div>
+            <!-- <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image"> -->
+            <p> Are you tired of the same old lunch and dinner menu? ...are you tired of eat stove burnt, store bought boxed food?? ..
+                are you tired of not having a cook book with recipes? Track-Mac is here for you. Now you can
+                explore and get access to many delicious dishes and thier recipes.
+                Want to try out a new diet? Generate a meal plan of your choice, it's a great 
+                way to try something new.   
+            </p>
     </header>
 
-    <section class="meal-plan"> meal plan
-        <div class="inner-grid">
+<!--Section-One-->
+    <section class="meal-plan">
             <form class="form">
                 <div class="calorie">
                     <h3>Generate your Meal Plan</p>
@@ -47,6 +52,7 @@
                 <div class="custom-select">
                     <h4>Select a Diet</h4>
                     <select class='diet'>
+                            <option id='allergy' ></option>
                             <option type='radio' value="classic">Classic</option>
                             <option type='radio' value="vegan">Vegan</option>
                             <option type='radio' value="vegetarian">Vegetarian</option>
@@ -55,20 +61,10 @@
                     </select>
                 </div><br/>
 
-                <div class="custom-select">
-                    <h4>Select a serving size</h4>
-                    <select id='serving-size'>
-                        <option type='radio' value="two-servings">2 servings</option>
-                        <option type='radio' value="three-servings">3 servings</option>
-                        <option type='radio' value="four-servings">4 servings</option>
-                        <option type='radio' value="five-servings">5 servings</option>
-                        <option type='radio' value="more-servings">more servings</option>
-                        <span class="arrow"></span>
-                        </select>
-                </div><br/>
                 <div class='custom-select'>
                     <h4>Any Allergies</h4>
                     <select id="allergens">
+                        <option id='allergy' ></option>
                         <option id='allergy' value="peanuts">peanuts</option>
                         <option id='allergy' value="shellfish">shellfish</option>
                         <option id='allergy' value="dairy">Dairy</option>
@@ -78,35 +74,19 @@
                         <option id='allergy' value="gluten">Gluten</option>
                     </select>
                 </div><br/>
+                <input value='Submit' id='submit' type='submit'></input>
+            </form>
 
-            <input value='submit' type='submit'>Get Meal</input>
-        </form>
-
-        <form class='Meal-plan-container'>
-            <div id='meal-plan-info' class='row-meal'>
-                <img>
-                <p></p>
-            </div>
-        </form>
-
-        </div>
-
-
-
-
+            <form class='meal-plan-container'>
+            <!-- <div id='meal-plan-info' class='row-meal'>
+             
+            </div> -->
+            </form>
     </section>
 
+<!---Section-Two-->
     <section class="food-cards"> pic -section
-        <!-- <div class="inner-grid" id="cards"> -->
-            <!-- <img src="" alt="Image">
-            <div class="content"></div> -->
-        <!-- </div> -->
-<!-- 
-        <div class="inner-grid" id="cards"></div>
-        <div class="inner-grid" id="cards"></div>
-        <div class="inner-grid" id="cards"></div> -->
-     
-    
+
     </section>
 </body>
 </html>

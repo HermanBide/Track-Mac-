@@ -4,16 +4,13 @@ const apikey = "682df04066714905927b1e93de89eaa9";
 const url = "https://api.spoonacular.com/mealplanner/generate";
 const IMG_URL = "https://spoonacular.com/cdn/ingredients_100x100";
 
-const foodCard = document.querySelector('food-cards')
+const mealInput = document.querySelector("#food-search");
+console.log(mealInput.value);
 
-
-
-const recipeData = async (food) => {
+const recipeData = async () => {
     try {
-        // const response = await axios.get("https://api.spoonacular.com/recipes/complexSearch?apiKey=682df04066714905927b1e93de89eaa9&name")
-        const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=d99bae42f1e440d599f4957c65df8ea5&ingredients=${food}&number=4`);
-        // const response = await axios.get (`https://api.spoonacular.com/recipes/complexSearch?apiKey=d99bae42f1e440d599f4957c65df8ea5&query=banana&maxFat=25&number=4`);
 
+        const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=abfa78063913474c9fdee9fdbb2f102e&ingredients=${mealInput.value}&number=6`)
         const recipes = response.data;
         console.log(recipes);
 
@@ -21,12 +18,9 @@ const recipeData = async (food) => {
         console.log(results);
 
         results.forEach((result) => {
-            // foodCard.innerText = result.title;
-            // console.log(result);
-
             const divEl = document.createElement('div');
 
-            const foodImg = document.createElement('img')
+            const foodImg = document.createElement('img');
             foodImg.src = result.image;
 
             const titleEl = document.createElement('div');
@@ -36,156 +30,77 @@ const recipeData = async (food) => {
             const foodCards = document.querySelector('.food-cards');
             divEl.append(foodImg);
 
-            foodCards.append(foodImg);
-            foodCards.append(titleEl);
+            foodCards.append(divEl);
+            // foodCards.append(titleEl);
         });
     } catch(error) {
         console.error(error);
     }
 }
-recipeData("chicken");
 
-// const dropdown = document.getElementById("#dropdown");
 
-// const button = document.queryElementById('#search')
-// button.addEventListner('click' = (event) => {
-//     event.preventDefault()
-//     const inputValue = document.querySelector('#food-search').value
-//     recipeData(inputValue)
-//     Input.value = ""
-// })
+const foodCards = document.querySelector('.food-cards');
+const search = document.querySelector('#search')
+search.addEventListener('click', (e) => {
+    e.preventDefault();
+    foodCards.innerHTML = "";
+    recipeData();
+});
 
-// dropdown.addEventListener('submit', handleChange);
 
-// const mealList = document.getElementsByClassName('.food-cards')
-// const getMeal = () =>{
-//     let searchINputText = document.getElementById('#search').value.trim();
-//     fetch(recipeData())
-//     .then(response => response.json())
-//     .then(data => {
-//         let html = "";
-//         if(data.meals) {
-//             data.meals.forEach(meal => {
-//                 html += `
-//                     <div class="" data-id = "">
-//                         <div class="">
-//                         <img src="" alt="">
-//                         <div>
-//                             <h3></h3>
-//                         </div>
-//                         </div>
-//                     </div>
-//                 `
-//             })
-// mealList.classList.remove('not found')
-//         } else {
-//             html = "sorry, no results"
-// mealList.classList.add("not found");
-//         }
-//         mealList.innerHTML = html;
-//     })
-// }
-
-// const mealRecipe = (e) => {
-//     e.preventDefault();
-//     if(e.target.classList.contains("recipe-btn")) {
-//         let mealItem = e.target.parentElement.parentElement;
-//         axios.get(``)
-//         .then(response => response.json())
-//         .then(data => mealrecipeModal(data.meal))
-//     }
-// }
-
-let calories = "";
-let diet = "";
-let serving = "";
-let allergens = "";
-
-const handleSelect = () => {
-    calories = document.querySelector('#input').value;
-    diet = document.querySelector('.diet').value;
-    serving = document.querySelector('#serving-size').value;
-    allergens = document.querySelector('#allergens').value;
-}
-
-const fetchMealData = async (calories, diet, allergens) => {
+const formEl = document.querySelector('.meal-plan-container');
+const fetchMealData = async (e) => {
     try {
-        const response = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=d99bae42f1e440d599f4957c65df8ea5&targetCaleries=${calories}&diet=${diet}&exclude=${allergens}`) 
+        e.preventDefault();
+        const calories = document.querySelector('#input').value;
+        const diet = document.querySelector('.diet').value;
+        const allergens = document.querySelector('#allergens').value;
+
+        const response = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=abfa78063913474c9fdee9fdbb2f102e&targetCaleries=${calories}&diet=${diet}&exclude=${allergens}`) 
         const dayObject = response.data.week;
         console.log(dayObject);
         const days = Object.values(dayObject);
         // console.log(days);
 
+        // if(value === `${calories} ${diet}` - `${allergens}`) {
+        //     return (day[].meals, day[].nutrients) 
+        // }
+
+
         days.forEach((day) => {
-            // return (day.meals[].title, day.nutrients[])
-            // day.meals[o].filter((meals) => {
-            //     for (let i=0; i<meals.length; i++) {
-            //         if(meals[0].serving !== "O serving") {
-            //             return (`${calories}`)
-            //         }
-            //     }
-            // });
+       
+            const foodContainer = document.createElement('div');
 
-            console.log(day.meals[2].title, day.nutrients.protein)
-
-            const formEl = document.querySelector('.meal-plan-container');
-            const foodContainer = document.createElement('div')
-
-            const mealImg = document.createElement('img')
-            mealImg.src = day.meals[1].sourceUrl.image
-
-            const mealTitleEl = document.createElement('h3');
+            const mealTitleEl = document.createElement('div');
             mealTitleEl.innerText = day.meals[1].title;
 
-            const nutrientEl = document.createElement('p')
-            nutrientEl.innerText = day.nutrients
+            const nutrientEl = document.createElement('div');
+            const nutrientUl = document.createElement('ul');
+            const nutrientList = document.createElement('li');
+            // const allList = [nutrientListOne, nutrientListTwo, nutrientListThree, nutrientListFour];
+            nutrientList.innerText = (day.nutrients.calories, day.nutrients.protein, day.nutrients.fat, day.nutrients.carbohydrates);
 
-            foodContainer.appendChild(mealImg, mealTitleEl, nutrientEl)
+            const mealImg = document.createElement('src');
+            mealImg.src = day.meals[1].sourceUrl;
+            mealImg.innerText = day.meals[1].sourceUrl;
+
+            nutrientUl.append(nutrientList)
+            nutrientEl.append(nutrientUl)
+
+            foodContainer.append(mealTitleEl, nutrientEl, mealImg, '')
             formEl.append(foodContainer);
-
-
-
-
-            // const foodNutrient = document.createElement("div");
-            // foodNutrient.innerHTML = `<div class="row">
-            //                             <div class="column four">
-            //                                 <img src="${day.meals.sourceURL}" alt="meal-image"/>
-            //                             </div>
-            //                             <div class="">
-            //                                 <h4>${day.meals.title}</h4>
-            //                                 <p>${day.meals}</p>
-            //                                 <p>${day.nutrients}</p>
-            //                             </div>
-            //                         </div>;`
-
         })
     } catch(error) {
         console.error(error);
     }
 }
-fetchMealData(meals[1]);
 
-// const displayFood = (data) => {
-//     let mealInfo = `
-//   <img id="food-pic" src="${data.url}" alt="food" style="width: 100px; height: auto;">
-//   <h2 id="food-title">${data.title}</h2>
-//   <p id="nutrients">${data.nutrients}</p> `
-//   document.querySelector('#cards').innerHTML = mealInfo;
-// }
-// displayFood();
 
 const mealForm = document.getElementsByClassName('.form');
 const InputEl= document.querySelector('#input').value;
 
-const generateMeal = () => {
-    handleSelect();
-    fetchMealData();
-}
-
-const getMeal = document.querySelector('sumit');
-// const getMealInfo = document.getElementById('#meal-plan-info');
-
-getMeal.document.addEventListener('click', generateMeal());
+const getMeal = document.querySelector('.form');
+getMeal.addEventListener('submit', fetchMealData);
 
 
 

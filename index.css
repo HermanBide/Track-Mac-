@@ -6,8 +6,15 @@ div {
     box-sizing: border-box;
 }
 
+html {
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif ;
+}
+
+
 body {
     background-color: #f4f4f4;
+    margin: 10px 10px;
     display: grid;
     grid-template-areas: 
       "N N N N"
@@ -15,74 +22,95 @@ body {
       "H H H H"
       "H H H H"
       "H H H H"
-      "H H H H"
+      "M M F F"
+      "M M F F"
       "M M F F"
       "M M F F"
       "M M F F"
       "M M F F";
-      /* "N N N N"
-      "H H H H"
-      "H H H H"
-      "H H H H"
-      "M M F F"
-      "M M F F"
-      "M M F F"
-      "M M F F"
-      "M M F F"
-      "M M F F"; */
     height: 100vh;
+    line-height: 1.5;
+}
+
+h2 {
+    color: #495057;
+}
+h3 {
+    color: #495057;
+}  
+
+h4  {
+    color: #495057;
+}
+
+/*BUTTONS*/
+button {
+    border-radius: 20px;
+    width: 70px;
+}
+
+#submit {
+    background-color: honeydew;
+    border-radius: 20px;
+    width: 70px;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 1px;
 }
 
 /* NAVBAR */
 .navbar {
     display: flex;
-    background-color: #edf0da;
+    background-color: #f8f9fa;
     grid-area: N;
     align-items: center;
     justify-content: space-around;
     margin-top: 0;
+    text-align: center;
+    height: 70px;
 }
 
 .logo {
-    background-color: rgb(176, 176, 199);
     left: 0;
     padding: 10px;
     font-size: 15px;
-}
-
-/* .search-bar{
-    background-color: greenyellow;
-} */
-
-.dropdown{
-    background-color: #edf0da;
     border-radius: 20px;
-    padding: 10px;
-    font-size: 15px;
-    border: 3px;
-    border-color: gray;
 }
 
-.dropdown:hover {
-    cursor: pointer;
-    font-size: 16px;
-    color: teal;
+.logo h2 {
+    color: olivedrab;
 }
+
 
 /* HEADER*/
 .header{
-    background-color:#edf0da;
-    font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Oxygen-Sans, Ubuntu, Cantarell, “Helvetica Neue”, sans-serif;
+    margin-top: -25px;
+    background-color:#f8f9fa;
     grid-area: H;
     display: grid;
     grid-template-columns:repeat(2, 1fr); 
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 10px;
     padding: 10px; 
-
-    background-image: url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-image: url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"), url("https://images.pexels.com/photos/4397898/pexels-photo-4397898.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
 }
 
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+p {
+    font-family:'Josefin Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: cadetblue;
+    z-index: 2;
+}
+
+content {
+    background-image: url("https://images.pexels.com/photos/4397898/pexels-photo-4397898.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+}
 
 
 /* SECTION - oNE */
@@ -91,99 +119,45 @@ body {
     grid-area: M;
     display: grid;
     grid-template-columns:repeat(1, 1fr); 
-    /* grid-template-rows: repeat(1, 1fr); */
     grid-gap: 10px;
     padding: 10px; 
     justify-content: space-around;
+    border-radius: 5px;
+    margin-bottom: -2px;
 }
 
 form {
-    /* display: block; */
     justify-content: space-around;
     margin: 10px;
-    background-color: green;
+    background-color: white;
+    justify-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 .input {
 display: flex;
-
 }
-/* 
-select {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    font-size: 14px;
-    padding: 8px 15px 8px 10px;
-    background: silver;
-    color: black;
-    border: 0;
-}
-
-.custom-select {
-    position: relative;
-    display: flex;
-}
-
-#arrow {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    background-color: steelblue;
-    height:100%;
-    width: 15px;
-    pointer-events: none;
-}
-
-#arrow::before,
-#arrow::after{
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#arrow::before {
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px soli rgba(255, 255, 255, 0.5);
-
-    top: 40%;
-}
-
-#arrow::after {
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid rgba(255, 255, 255, 0.5);
-
-    top: 60%;
-} */
 
 /* SECTION-TWO */
 .food-cards {
-    background-color:#edf0da;;
+    background-color:#f8f9fa;
     grid-area: F;
     display: grid;
-    /* same as 1fr 1fr 1fr */
     grid-template-columns: repeat(3, 1fr); 
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 10px;
     padding: 10px;
     max-width: 100vw;
+    border-radius: 5px;
+    margin-bottom: -2px;
 }
 
-/* #cards {
-
-} */
-
 .inner-grid {
-    background-color: powderblue;
+    background-color: #f4f4f4;
 }
 
 .allergens {
     display: flex;
-
 }
 
 #allergy {
@@ -203,9 +177,15 @@ select {
    cursor: pointer;
 }
 
-/* #allergy:hover::after {
-    background-color: green;
-} */
+.food-cards div {
+    background-color:#ffff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color:orangered ;
+
+}
+
+
 
 @media only screen and (max-width: 485px) {
     div {
@@ -220,33 +200,22 @@ select {
         background-color: #f4f4f4;
         display: grid;
         grid-template-areas: 
-          "N N N N"
-          "H H H H"
-          "H H H H"
-          "H H H H"
-          "H H H H"
-          "F F F F"
-          "F F F F"
-          "F F F F"
-          "F F F F"
-          "M M M M"
-          "M M M M"
-          "M M M M"
-          "M M M M";
-          /* "N N N N"
-          "H H H H"
-          "H H H H"
-          "H H H H"
-          "M M F F"
-          "M M F F"
-          "M M F F"
-          "M M F F"
-          "M M F F"
-          "M M F F"; */
+          "N "
+          "N "
+          "H "
+          "H "
+          "H "
+          "H "
+          "F "
+          "F "
+          "F "
+          "F "
+          "M "
+          "M "
+          "M "
+          "M ";
+
         height: 100vh;
     }
 
-    /* .nav {
-
-    } */
 }
