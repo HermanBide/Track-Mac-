@@ -6,6 +6,10 @@ div {
     box-sizing: border-box;
 }
 
+*{
+    text-shadow: 0px 0px 0px;
+}
+
 html {
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif ;
@@ -47,16 +51,25 @@ h4  {
 button {
     border-radius: 20px;
     width: 70px;
+    background-color: #f28f3b;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
 }
 
-#submit {
+button:hover {
+    font-size: 18px;
+    color: white;
+}
+
+/* #submit {
     background-color: honeydew;
     border-radius: 20px;
     width: 70px;
     font-weight: bold;
     font-family: 'Josefin Sans', sans-serif;
     padding: 1px;
-}
+} */
 
 /* NAVBAR */
 .navbar {
@@ -92,7 +105,7 @@ button {
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 10px;
     padding: 10px; 
-    background-image: url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"), url("https://images.pexels.com/photos/4397898/pexels-photo-4397898.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-image: url("https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
 img {
@@ -104,13 +117,14 @@ p {
     font-family:'Josefin Sans', sans-serif;
     font-size: 22px;
     font-weight: 700;
+    text-shadow: 1px 1px 1px;
     color: cadetblue;
     z-index: 2;
 }
 
-content {
-    background-image: url("https://images.pexels.com/photos/4397898/pexels-photo-4397898.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-}
+/* content {
+    background-image: url("https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+} */
 
 
 /* SECTION - oNE */
@@ -119,7 +133,7 @@ content {
     grid-area: M;
     display: grid;
     grid-template-columns:repeat(1, 1fr); 
-    grid-gap: 10px;
+    grid-gap: 2px;
     padding: 10px; 
     justify-content: space-around;
     border-radius: 5px;
@@ -128,14 +142,27 @@ content {
 
 form {
     justify-content: space-around;
-    margin: 10px;
+    margin: 1px 10px;
     background-color: white;
     justify-items: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
+    max-height: 400px;
+    margin-bottom: -40px;
 }
+
 .input {
 display: flex;
+}
+
+.meal-plan-container {
+    max-height: 200px;
+    overflow: scroll;
+    margin-bottom: -55px;
+    border-radius: 10px;
+    /* position: absolute; */
+    top: 550px;
+    justify-items: center;
 }
 
 /* SECTION-TWO */
@@ -181,7 +208,7 @@ display: flex;
     background-color:#ffff;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    color:orangered ;
+    color:#f28f3b ;
 
 }
 

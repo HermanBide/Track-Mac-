@@ -1,8 +1,8 @@
 /*https://api.spoonacular.com/mealplanner/generate?apiKey=682df04066714905927b1e93de89eaa9&targetCaleries*/
 
-const apikey = "682df04066714905927b1e93de89eaa9";
-const url = "https://api.spoonacular.com/mealplanner/generate";
-const IMG_URL = "https://spoonacular.com/cdn/ingredients_100x100";
+// const apikey = "682df04066714905927b1e93de89eaa9";
+// const url = "https://api.spoonacular.com/mealplanner/generate";
+// const IMG_URL = "https://spoonacular.com/cdn/ingredients_100x100";
 
 const mealInput = document.querySelector("#food-search");
 console.log(mealInput.value);
@@ -10,7 +10,7 @@ console.log(mealInput.value);
 const recipeData = async () => {
     try {
 
-        const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=abfa78063913474c9fdee9fdbb2f102e&ingredients=${mealInput.value}&number=6`)
+        const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=db91a981647d4b7ba8ccf94eb6946d7d&ingredients=${mealInput.value}&number=6`)
         const recipes = response.data;
         console.log(recipes);
 
@@ -23,20 +23,35 @@ const recipeData = async () => {
             const foodImg = document.createElement('img');
             foodImg.src = result.image;
 
+            const imgLink = document.createElement('a')
+            imgLink.href = result.image;
+
+            imgLink.append(foodImg)
+
             const titleEl = document.createElement('div');
             titleEl.innerText = result.title;
             divEl.append(titleEl);
             
             const foodCards = document.querySelector('.food-cards');
-            divEl.append(foodImg);
+            divEl.append(imgLink);
 
             foodCards.append(divEl);
-            // foodCards.append(titleEl);
         });
     } catch(error) {
         console.error(error);
     }
 }
+
+// const images = document.querySelectorAll('[data.src]');
+
+// const imgOptions = {}
+// const imgObserver = new IntersectionObserver(() => {
+
+// }, )
+
+
+
+
 
 
 const foodCards = document.querySelector('.food-cards');
@@ -56,15 +71,10 @@ const fetchMealData = async (e) => {
         const diet = document.querySelector('.diet').value;
         const allergens = document.querySelector('#allergens').value;
 
-        const response = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=abfa78063913474c9fdee9fdbb2f102e&targetCaleries=${calories}&diet=${diet}&exclude=${allergens}`) 
+        const response = await axios.get(`https://api.spoonacular.com/mealplanner/generate?apiKey=db91a981647d4b7ba8ccf94eb6946d7d&targetCaleries=${calories}&diet=${diet}&exclude=${allergens}`) 
         const dayObject = response.data.week;
         console.log(dayObject);
         const days = Object.values(dayObject);
-        // console.log(days);
-
-        // if(value === `${calories} ${diet}` - `${allergens}`) {
-        //     return (day[].meals, day[].nutrients) 
-        // }
 
 
         days.forEach((day) => {
@@ -75,19 +85,45 @@ const fetchMealData = async (e) => {
             mealTitleEl.innerText = day.meals[1].title;
 
             const nutrientEl = document.createElement('div');
-            const nutrientUl = document.createElement('ul');
-            const nutrientList = document.createElement('li');
-            // const allList = [nutrientListOne, nutrientListTwo, nutrientListThree, nutrientListFour];
-            nutrientList.innerText = (day.nutrients.calories, day.nutrients.protein, day.nutrients.fat, day.nutrients.carbohydrates);
 
-            const mealImg = document.createElement('src');
-            mealImg.src = day.meals[1].sourceUrl;
+            const nutrientCalories = document.createElement('p')
+            const nutrientProtein = document.createElement('p')
+            const nutrientFat = document.createElement('p')
+            const nutrientCarbs = document.createElement('p')
+
+            nutrientCalories.innerText = day.nutrients.calories;
+            nutrientProtein.innerText = day.nutrients.protein;
+            nutrientFat.innerText = day.nutrients.fat; 
+            nutrientCarbs.innerText = day.nutrients.carbohydrates;
+
+
+            const textCal = document.createTextNode("     :Calories");
+            const textPro = document.createTextNode("     :Protein");
+            const textFat = document.createTextNode("     :Fat");
+            const textCarb = document.createTextNode("     :Carbs");
+            nutrientCalories.append(textCal)
+            nutrientProtein.append(textPro) 
+            nutrientFat.append(textFat) 
+            nutrientCarbs.append(textCarb)
+
+
+
+            const mealImg = document.createElement('p');
             mealImg.innerText = day.meals[1].sourceUrl;
 
-            nutrientUl.append(nutrientList)
-            nutrientEl.append(nutrientUl)
+            const mealLink = document.createElement('a')
+            mealLink.href = day.meals[1].sourceUrl
 
-            foodContainer.append(mealTitleEl, nutrientEl, mealImg, '')
+            mealLink.append(mealImg)
+         
+            
+
+            nutrientEl.append(nutrientCalories, nutrientProtein, nutrientFat, nutrientCarbs);
+
+
+
+
+            foodContainer.append(mealTitleEl, nutrientEl, mealLink, '')
             formEl.append(foodContainer);
         })
     } catch(error) {
