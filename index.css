@@ -20,6 +20,7 @@ body {
     background-color: #f4f4f4;
     margin: 10px 10px;
     display: grid;
+    grid-gap: 5px;
     grid-template-areas: 
       "N N N N"
       "H H H H"
@@ -45,6 +46,7 @@ h3 {
 
 h4  {
     color: #495057;
+    margin: 2px;
 }
 
 /*BUTTONS*/
@@ -62,14 +64,16 @@ button:hover {
     color: white;
 }
 
-/* #submit {
-    background-color: honeydew;
+#submit {
+
     border-radius: 20px;
     width: 70px;
-    font-weight: bold;
     font-family: 'Josefin Sans', sans-serif;
     padding: 1px;
-} */
+    background-color: #f28f3b;
+    border: none;
+  
+}
 
 /* NAVBAR */
 .navbar {
@@ -81,6 +85,7 @@ button:hover {
     margin-top: 0;
     text-align: center;
     height: 70px;
+    padding: 5px;
 }
 
 .logo {
@@ -106,6 +111,7 @@ button:hover {
     grid-gap: 10px;
     padding: 10px; 
     background-image: url("https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    height: 400px;
 }
 
 img {
@@ -117,9 +123,13 @@ p {
     font-family:'Josefin Sans', sans-serif;
     font-size: 22px;
     font-weight: 700;
-    text-shadow: 1px 1px 1px;
-    color: cadetblue;
+    text-shadow: 2px 2px 2px #52ffb8;
+    color: green;
     z-index: 2;
+    padding:2px 5px;
+    grid-column:1/4 ;
+    grid-row: 1/ 3;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 /* content {
@@ -138,6 +148,8 @@ p {
     justify-content: space-around;
     border-radius: 5px;
     margin-bottom: -2px;
+    height: 650px;
+
 }
 
 form {
@@ -147,7 +159,7 @@ form {
     justify-items: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
-    max-height: 400px;
+    max-height: 650px;
     margin-bottom: -40px;
 }
 
@@ -156,31 +168,13 @@ display: flex;
 }
 
 .meal-plan-container {
-    max-height: 200px;
+    max-height: 300px;
     overflow: scroll;
     margin-bottom: -55px;
     border-radius: 10px;
     /* position: absolute; */
-    top: 550px;
-    justify-items: center;
-}
-
-/* SECTION-TWO */
-.food-cards {
-    background-color:#f8f9fa;
-    grid-area: F;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 10px;
-    padding: 10px;
-    max-width: 100vw;
-    border-radius: 5px;
-    margin-bottom: -2px;
-}
-
-.inner-grid {
-    background-color: #f4f4f4;
+    top: 650px;
+    justify-items: center;   
 }
 
 .allergens {
@@ -204,17 +198,40 @@ display: flex;
    cursor: pointer;
 }
 
+/* SECTION-TWO */
+.food-cards {
+    background-color:#f8f9fa;
+    grid-area: F;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    /* max-width: 950px; */
+    border-radius: 5px;
+    margin-bottom: -2px;
+    /* height: 300px; */
+}
+
+.inner-grid {
+    background-color: #f4f4f4;
+}
+
+
 .food-cards div {
     background-color:#ffff;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     color:#f28f3b ;
+}
 
+.food-cards div:hover {
+    background-color:lightgray;
+    color:#f28f3b ;  
 }
 
 
-
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 750px) {
     div {
         font-family: sans-serif;
         text-align: center;
@@ -226,23 +243,71 @@ display: flex;
     body {
         background-color: #f4f4f4;
         display: grid;
-        grid-template-areas: 
-          "N "
-          "N "
-          "H "
-          "H "
-          "H "
-          "H "
-          "F "
-          "F "
-          "F "
-          "F "
-          "M "
-          "M "
-          "M "
-          "M ";
+        grid-template-columns: repeat(3, 1fr)
+    }
 
-        height: 100vh;
+}
+
+/* @media only screen and (max-width: 550px) {
+    div {
+        font-family: sans-serif;
+        text-align: center;
+        min-height: 25px;
+        min-width: 25px;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #f4f4f4;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+} */
+
+@media only screen and (max-width: 425px) {
+    div {
+        font-family: sans-serif;
+        text-align: center;
+        min-height: 25px;
+        min-width: 25px;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #f4f4f4;
+        display: grid;
+        /* grid-template-columns: repeat(2, 1fr); */
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-content: space-evenly;
+
+    }
+
+    p{
+        font-size: 16px;
+    }
+    .navbar {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 2fr 2fr;
+        min-height: 150px;
+    }
+
+    #h2 {
+        font-size: 18px;
+    }
+
+    .header {
+        height: 300px;
+       
+    }
+
+    .meal-plan {
+        display: grid;
+    }
+
+    .food-cards {
+        display: grid;
     }
 
 }
