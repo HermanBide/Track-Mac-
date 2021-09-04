@@ -50,7 +50,7 @@ h4  {
 }
 
 /*BUTTONS*/
-button {
+.button {
     border-radius: 20px;
     width: 70px;
     background-color: #f28f3b;
@@ -64,15 +64,16 @@ button:hover {
     color: white;
 }
 
-.submit-plan {
+#submit {
+    display: flex;
     border-radius: 20px;
     width: 70px;
+    height: 30px;
     font-family: 'Josefin Sans', sans-serif;
-    padding: 1px;
+    padding-top: 4px;
     background-color: #f28f3b;
     border: none;
-    margin: 0 ;
-  
+    margin: 0 auto ;
 }
 
 /* NAVBAR */
@@ -169,7 +170,7 @@ display: flex;
 
 .meal-plan-container {
     max-height: 300px;
-    overflow: scroll;
+    overflow-y: scroll;
     margin-bottom: -55px;
     border-radius: 10px;
     /* position: absolute; */
@@ -223,7 +224,7 @@ display: flex;
     background-color:#ffff;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    color:#f28f3b ;
+    color: #495057;
 }
 
 .food-cards div:hover {
@@ -249,7 +250,7 @@ display: flex;
 
 }
 
-/* @media only screen and (max-width: 550px) {
+@media only screen and (max-width: 550px) {
     div {
         font-family: sans-serif;
         text-align: center;
@@ -264,7 +265,31 @@ display: flex;
         grid-template-columns: repeat(2, 1fr)
     }
 
-} */
+    .navbar {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 2fr 2fr;
+        min-height: 150px;
+    }
+
+    #h2 {
+        font-size: 18px;
+    }
+
+    .header {
+        height: 300px;
+       
+    }
+
+    .meal-plan {
+        grid-template-columns: 1fr;
+    }
+
+    .food-cards {
+        grid-template-columns: 1fr;
+        overflow-y: initial ;
+    }
+
+}
 
 @media only screen and (max-width: 425px) {
     div {
