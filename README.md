@@ -66,11 +66,11 @@ HTML & CSS Layout grid  - 3hrs
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs|  | |
-| Working with API | H | 3hrs| | |
-| working with Event Listeners and funcitons | H | 3hrs | |
-| Style content | H | 3hrs| | |
-| Build responsive Layout | H | 3hrs | |
+| Adding Form | H | 3hrs| 3hr | |
+| Working with API | H | 3hrs| 4hr | |
+| working with Event Listeners and funcitons | H | 3hrs |2hr |
+| Style content | H | 3hrs|3hr | |
+| Build responsive Layout | H | 3hrs |1hr |
 | Total | H | |  | |
 
 ## Timeframes
